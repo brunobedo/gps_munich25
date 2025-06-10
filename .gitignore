@@ -197,6 +197,7 @@ cython_debug/
 data/ 
 draft/ 
 rawdata/Kinexon GPS PRO
+rawdata/Kinexon GPS ELITE
 
 
 # Files 
