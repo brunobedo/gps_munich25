@@ -194,10 +194,9 @@ cython_debug/
 .cursorindexingignore
 
 # Folders 
-data/ 
+# data/ 
 draft/ 
-rawdata/Kinexon GPS PRO
-rawdata/Kinexon GPS ELITE
+rawdata/
 
 
 # Files 
