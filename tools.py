@@ -182,7 +182,7 @@ def draw_soccer_field(tam=[30, 20]):
     ax.set_xticks([])
     ax.set_yticks([])
     ax.spines[:].set_visible(False)
-    return ax
+    return fig, ax 
 
 
 
