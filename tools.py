@@ -332,4 +332,4 @@ def draw_basketball_court(ax=None, linecolor='white', lw=1.5, courtcolor='#CC550
         ax.set_yticks([])
 
     return fig, ax
-draw_basketball_court()
+
