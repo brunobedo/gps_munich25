@@ -129,63 +129,6 @@ def gps2cart(lat, lon, mcampo):
 
 
 
-def draw_soccer_field(tam=[30, 20]):
-    comp, larg = tam
-    c = (0, 0.7, 0)  # cor de fundo
-
-    fig, ax = plt.subplots(figsize=(10, 5))
-    ax.set_facecolor(c)
-    ax.set_xlim(-2, comp + 2)
-    ax.set_ylim(-2, larg + 2)
-    ax.set_aspect('equal')
-    
-    # Linha central
-    ax.plot([comp / 2, comp / 2], [0, larg], 'w-', linewidth=2.5)
-
-    # Linhas de fundo e laterais
-    ax.plot([0, 0], [0, larg], 'w-', linewidth=2.5)
-    ax.plot([comp, comp], [0, larg], 'w-', linewidth=2.5)
-    ax.plot([0, comp], [0, 0], 'w-', linewidth=2.5)
-    ax.plot([0, comp], [larg, larg], 'w-', linewidth=2.5)
-
-    # Círculo central
-    ang = np.linspace(-np.pi, np.pi, 100)
-    x_circ = 3 * np.cos(ang) + comp / 2
-    y_circ = 3 * np.sin(ang) + larg / 2
-    ax.plot(x_circ, y_circ, 'w', linewidth=2.5)
-
-    # Áreas grandes - esquerda
-    ax.plot([comp * 0.16, comp * 0.16], [(larg / 2) - comp * 0.16, (larg / 2) + comp * 0.16], 'w', linewidth=2.5)
-    ax.plot([0, comp * 0.16], [(larg / 2) - comp * 0.16, (larg / 2) - comp * 0.16], 'w', linewidth=2.5)
-    ax.plot([0, comp * 0.16], [(larg / 2) + comp * 0.16, (larg / 2) + comp * 0.16], 'w', linewidth=2.5)
-
-    # Áreas pequenas - esquerda
-    ax.plot([comp * 0.07, comp * 0.07], [(larg / 2) - comp * 0.07, (larg / 2) + comp * 0.07], 'w', linewidth=2.5)
-    ax.plot([0, comp * 0.07], [(larg / 2) - comp * 0.07, (larg / 2) - comp * 0.07], 'w', linewidth=2.5)
-    ax.plot([0, comp * 0.07], [(larg / 2) + comp * 0.07, (larg / 2) + comp * 0.07], 'w', linewidth=2.5)
-
-    # Áreas grandes - direita
-    ax.plot([comp * 0.84, comp * 0.84], [(larg / 2) - comp * 0.16, (larg / 2) + comp * 0.16], 'w', linewidth=2.5)
-    ax.plot([comp - comp * 0.16, comp], [(larg / 2) - comp * 0.16, (larg / 2) - comp * 0.16], 'w', linewidth=2.5)
-    ax.plot([comp - comp * 0.16, comp], [(larg / 2) + comp * 0.16, (larg / 2) + comp * 0.16], 'w', linewidth=2.5)
-
-    # Áreas pequenas - direita
-    ax.plot([comp * 0.93, comp * 0.93], [(larg / 2) - comp * 0.07, (larg / 2) + comp * 0.07], 'w', linewidth=2.5)
-    ax.plot([comp - comp * 0.07, comp], [(larg / 2) - comp * 0.07, (larg / 2) - comp * 0.07], 'w', linewidth=2.5)
-    ax.plot([comp - comp * 0.07, comp], [(larg / 2) + comp * 0.07, (larg / 2) + comp * 0.07], 'w', linewidth=2.5)
-
-    # Pontos de pênalti e centro
-    ax.plot(comp * 0.1, larg / 2, 'w.', markersize=15)
-    ax.plot(comp * 0.9, larg / 2, 'w.', markersize=15)
-    ax.plot(comp / 2, larg / 2, 'w.', markersize=15)
-
-    ax.set_xticks([])
-    ax.set_yticks([])
-    ax.spines[:].set_visible(False)
-    return fig, ax 
-
-
-
 def calib_lat_lon_soccer():
     p1 = [48.181346413098815, 11.544539229252987]
     p2 = [48.18108968820917, 11.544539260391772]
@@ -257,3 +200,60 @@ def cut_df_time(df, str_start_time=None, str_end_time=None):
         print(f' !! Error in trim data by time: Start: {str_start_time} - End: {str_end_time}!!')
         print(e)
         return pd.DataFrame()
+
+
+
+def draw_soccer_field(tam=[30, 20]):
+    comp, larg = tam
+    c = (0, 0.7, 0)  # cor de fundo
+
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.set_facecolor(c)
+    ax.set_xlim(-2, comp + 2)
+    ax.set_ylim(-2, larg + 2)
+    ax.set_aspect('equal')
+    
+    # Linha central
+    ax.plot([comp / 2, comp / 2], [0, larg], 'w-', linewidth=2.5)
+
+    # Linhas de fundo e laterais
+    ax.plot([0, 0], [0, larg], 'w-', linewidth=2.5)
+    ax.plot([comp, comp], [0, larg], 'w-', linewidth=2.5)
+    ax.plot([0, comp], [0, 0], 'w-', linewidth=2.5)
+    ax.plot([0, comp], [larg, larg], 'w-', linewidth=2.5)
+
+    # Círculo central
+    ang = np.linspace(-np.pi, np.pi, 100)
+    x_circ = 3 * np.cos(ang) + comp / 2
+    y_circ = 3 * np.sin(ang) + larg / 2
+    ax.plot(x_circ, y_circ, 'w', linewidth=2.5)
+
+    # Áreas grandes - esquerda
+    ax.plot([comp * 0.16, comp * 0.16], [(larg / 2) - comp * 0.16, (larg / 2) + comp * 0.16], 'w', linewidth=2.5)
+    ax.plot([0, comp * 0.16], [(larg / 2) - comp * 0.16, (larg / 2) - comp * 0.16], 'w', linewidth=2.5)
+    ax.plot([0, comp * 0.16], [(larg / 2) + comp * 0.16, (larg / 2) + comp * 0.16], 'w', linewidth=2.5)
+
+    # Áreas pequenas - esquerda
+    ax.plot([comp * 0.07, comp * 0.07], [(larg / 2) - comp * 0.07, (larg / 2) + comp * 0.07], 'w', linewidth=2.5)
+    ax.plot([0, comp * 0.07], [(larg / 2) - comp * 0.07, (larg / 2) - comp * 0.07], 'w', linewidth=2.5)
+    ax.plot([0, comp * 0.07], [(larg / 2) + comp * 0.07, (larg / 2) + comp * 0.07], 'w', linewidth=2.5)
+
+    # Áreas grandes - direita
+    ax.plot([comp * 0.84, comp * 0.84], [(larg / 2) - comp * 0.16, (larg / 2) + comp * 0.16], 'w', linewidth=2.5)
+    ax.plot([comp - comp * 0.16, comp], [(larg / 2) - comp * 0.16, (larg / 2) - comp * 0.16], 'w', linewidth=2.5)
+    ax.plot([comp - comp * 0.16, comp], [(larg / 2) + comp * 0.16, (larg / 2) + comp * 0.16], 'w', linewidth=2.5)
+
+    # Áreas pequenas - direita
+    ax.plot([comp * 0.93, comp * 0.93], [(larg / 2) - comp * 0.07, (larg / 2) + comp * 0.07], 'w', linewidth=2.5)
+    ax.plot([comp - comp * 0.07, comp], [(larg / 2) - comp * 0.07, (larg / 2) - comp * 0.07], 'w', linewidth=2.5)
+    ax.plot([comp - comp * 0.07, comp], [(larg / 2) + comp * 0.07, (larg / 2) + comp * 0.07], 'w', linewidth=2.5)
+
+    # Pontos de pênalti e centro
+    ax.plot(comp * 0.1, larg / 2, 'w.', markersize=15)
+    ax.plot(comp * 0.9, larg / 2, 'w.', markersize=15)
+    ax.plot(comp / 2, larg / 2, 'w.', markersize=15)
+
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.spines[:].set_visible(False)
+    return fig, ax 
