@@ -367,3 +367,13 @@ def draw_beach_volleyball_court(ax=None, linecolor='white', lw=2, courtcolor='#D
         ax.set_yticks([])
 
     return fig, ax
+
+
+
+def load_data(sport):
+    print(f'Loading XY data: {sport.capitalize()}') 
+    folder = f'data/{sport}'
+    df_blue = pd.read_csv(f'{folder}/blue_xy.csv')
+    df_orange = pd.read_csv(f'{folder}/orange_xy.csv') 
+    return df_blue, df_orange
+    
