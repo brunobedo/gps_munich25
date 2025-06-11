@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 from geographiclib.geodesic import Geodesic
 from matplotlib.patches import Circle, Rectangle, Arc
+from matplotlib.lines import Line2D 
 
 
 
@@ -333,3 +334,36 @@ def draw_basketball_court(ax=None, linecolor='white', lw=1.5, courtcolor='#CC550
 
     return fig, ax
 
+
+
+def draw_beach_volleyball_court(ax=None, linecolor='white', lw=2, courtcolor='#D2B48C', remove_axis=False, court_length = 16, court_width = 8):
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(10, 5))
+
+    # Contorno da quadra
+    outer_lines = Rectangle((0, 0), court_length, court_width, linewidth=lw, edgecolor=linecolor, facecolor='none')
+
+    # Linha central (rede)
+    net_line = Line2D([court_length / 2, court_length / 2], [0, court_width], color=linecolor, linewidth=lw)
+
+    # Zona de ataque (opcional, 3m da rede)
+    attack_zone_left = Line2D([court_length / 2 - 3, court_length / 2 - 3], [0, court_width], color=linecolor, linewidth=1, linestyle='dashed')
+    attack_zone_right = Line2D([court_length / 2 + 3, court_length / 2 + 3], [0, court_width], color=linecolor, linewidth=1, linestyle='dashed')
+
+    # Adiciona elementos
+    ax.add_patch(outer_lines)
+    ax.add_line(net_line)
+    ax.add_line(attack_zone_left)
+    ax.add_line(attack_zone_right)
+
+    # Estilo
+    ax.set_xlim(-1, court_length + 1)
+    ax.set_ylim(-1, court_width + 1)
+    ax.set_aspect('equal')
+    ax.set_facecolor(courtcolor)
+
+    if remove_axis:
+        ax.set_xticks([])
+        ax.set_yticks([])
+
+    return fig, ax
