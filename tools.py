@@ -133,7 +133,7 @@ def draw_soccer_field(tam=[30, 20]):
     comp, larg = tam
     c = (0, 0.7, 0)  # cor de fundo
 
-    fig, ax = plt.subplots(figsize=(comp / 5, larg / 5))
+    fig, ax = plt.subplots(figsize=(10, 5))
     ax.set_facecolor(c)
     ax.set_xlim(-2, comp + 2)
     ax.set_ylim(-2, larg + 2)
