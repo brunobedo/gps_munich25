@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime
 from geographiclib.geodesic import Geodesic
+from matplotlib.patches import Circle, Rectangle, Arc
+
 
 
 def load_gps_data(gps_type='PRO', player_num=1):
@@ -257,3 +259,77 @@ def draw_soccer_field(tam=[30, 20]):
     ax.set_yticks([])
     ax.spines[:].set_visible(False)
     return fig, ax 
+
+
+
+
+def draw_basketball_court(ax=None, linecolor='white', lw=1.5, courtcolor='#CC5500', remove_axis=False, court_width= 15.05, court_length=28.4):
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(10, 5))
+
+    hoop_distance = 1.2
+    paint_length = 5.8
+    paint_width_outer = 4.9
+    paint_width_inner = 3.6
+    restricted_diameter = 2.6
+    three_point_radius = 6.75
+    center_circle_radius = 1.8
+
+    def draw_half_court(origin_x, invert=False):
+        direction = -1 if invert else 1
+        elems = []
+
+        # Cesta e tabela
+        hoop = Circle((origin_x + direction * hoop_distance, court_width / 2), 0.2, linewidth=lw, color=linecolor, fill=False)
+        backboard = Rectangle((origin_x + direction * (hoop_distance - 0.1), court_width / 2 - 1), 0.1, 2, linewidth=lw, color=linecolor)
+
+        # Garrafão
+        outer_box = Rectangle((origin_x, court_width / 2 - paint_width_outer / 2), direction * paint_length, paint_width_outer, linewidth=lw, color=linecolor, fill=False)
+        inner_box = Rectangle((origin_x, court_width / 2 - paint_width_inner / 2), direction * paint_length, paint_width_inner, linewidth=lw, color=linecolor, fill=False)
+
+        # Arcos do lance livre
+        top_ft_arc = Arc((origin_x + direction * paint_length, court_width / 2), paint_width_inner, paint_width_inner,
+                         theta1=270 if not invert else 90, theta2=90 if not invert else 270, linewidth=lw, color=linecolor)
+        bottom_ft_arc = Arc((origin_x + direction * paint_length, court_width / 2), paint_width_inner, paint_width_inner,
+                            theta1=90 if not invert else 270, theta2=270 if not invert else 90, linewidth=lw, color=linecolor, linestyle='dashed')
+
+        # Área restrita
+        restricted = Arc((origin_x + direction * hoop_distance, court_width / 2), restricted_diameter, restricted_diameter,
+                         theta1=270 if not invert else 90, theta2=90 if not invert else 270, linewidth=lw, color=linecolor)
+
+        # Arco de 3 pontos
+        three_arc = Arc((origin_x + direction * (hoop_distance + 1), court_width / 2), 13.5, 13.5,
+                        theta1=270 if not invert else 90, theta2=90 if not invert else 270, linewidth=lw, color=linecolor)
+
+        # Linhas de 3 pontos dos cantos
+        corner_three_a = Rectangle((origin_x, 0.77), direction * 2.6, 0, linewidth=lw, color=linecolor)
+        corner_three_b = Rectangle((origin_x, court_width - 0.77), direction * 2.6, 0, linewidth=lw, color=linecolor)
+
+        elems += [hoop, backboard, outer_box, inner_box, top_ft_arc, bottom_ft_arc,
+                  restricted, three_arc, corner_three_a, corner_three_b]
+        return elems
+
+    # Lado esquerdo (0) e lado direito (quadra invertida a partir da borda final)
+    left_half = draw_half_court(0, invert=False)
+    right_half = draw_half_court(court_length, invert=True)
+
+    # Círculo central
+    center_circle = Circle((court_length / 2, court_width / 2), center_circle_radius, linewidth=lw, color=linecolor, fill=False)
+
+    # Linhas externas
+    outer_lines = Rectangle((0, 0), court_length, court_width, linewidth=lw, color=linecolor, fill=False)
+
+    for el in left_half + right_half + [center_circle, outer_lines]:
+        ax.add_patch(el)
+
+    ax.set_xlim(-1, court_length + 1)
+    ax.set_ylim(-1, court_width + 1)
+    ax.set_aspect('equal')
+    ax.set_facecolor(courtcolor)
+
+    if remove_axis:
+        ax.set_xticks([])
+        ax.set_yticks([])
+
+    return fig, ax
+draw_basketball_court()
