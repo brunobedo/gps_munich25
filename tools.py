@@ -376,4 +376,17 @@ def load_data(sport):
     df_blue = pd.read_csv(f'{folder}/blue_xy.csv')
     df_orange = pd.read_csv(f'{folder}/orange_xy.csv') 
     return df_blue, df_orange
+
+
+
+def draw_field_court(sport): 
+    if sport == 'soccer': 
+        fig, ax = draw_soccer_field()
+    elif sport == 'basketball': 
+        fig, ax = draw_basketball_court(remove_axis=True)
+    elif sport == 'volleyball':
+        fig, ax = draw_beach_volleyball_court(remove_axis=True)
+    else: 
+        fig, ax = plt.plt.subplots(figsize=(10, 5))
+    return fig, ax
     
