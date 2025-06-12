@@ -1,4 +1,6 @@
-# GPS_Munich25
+# GPS Analysis | Munich 2025 
+## Data Science and Sports Performance:  A Bavarian-Latin American Initiative for Integrating GNSS, LPS, and Computer Vision Tracking in Team Sports Analysis
+
 
 Collaborative initiative for sports performance analysis using positional tracking data (GNSS, LPS, and Computer Vision) across Brazilian and German institutions. This project promotes scientific exchange, joint workshops, and the development of open tools and resources for applied research in team sports.
 
