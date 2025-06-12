@@ -27,7 +27,7 @@ def calculate_all_variables(sport, save=True):
     }
 if __name__ == '__main__':
     print('-------------------------------------------------')
-    print('Starting calculations for all sports...')
+    print('Starting calculations of all variables...')
     print(' ')
     parser = argparse.ArgumentParser(description='Calculate all variables for a specific sport.')
     parser.add_argument(
