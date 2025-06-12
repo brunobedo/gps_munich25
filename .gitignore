@@ -200,3 +200,5 @@ rawdata/Kinexon GPS PRO
 
 # Files 
 draft.ipynb
+__pycache__/
+srs/__pycache__/
