@@ -26,7 +26,7 @@ def calculate_all_variables(sport, save=True):
         'width_length': (df_b_width_length, df_o_width_length, anim_width_length)
     }
 if __name__ == '__main__':
-    print(' ')
+    print('-------------------------------------------------')
     print('Starting calculations for all sports...')
     print(' ')
     parser = argparse.ArgumentParser(description='Calculate all variables for a specific sport.')
