@@ -36,8 +36,9 @@ pip install -r requirements.txt
 Perfeito, Bruno. Aqui está a versão **resumida** e organizada da seção `🗂 Repository Structure`, com os arquivos de resultados agrupados por tipo de métrica e por modalidade, **sem listar individualmente cada CSV e MP4**:
 
 ---
-## 🗂 Repository Structure
+## 🗂 Repository Folder/Files
 
+```
 gps\_munich25/
 │
 ├── data/                          # Processed positional data per sport
@@ -69,7 +70,7 @@ gps\_munich25/
 │
 ├── requirements.txt               # Python dependencies
 └── README.md                      # This file
-
+```
 
 ---
 
@@ -116,11 +117,7 @@ Contributions and collaboration are welcome. Feel free to fork the repository, s
 ## 🙏 Acknowledgements
 
 This project is supported by the **Bavarian Academic Center for Latin America (BAYLAT)** and involves collaboration with **FAPESP** research initiatives in Brazil.
-
-
 ---
-
-
 
 ## 📫 Contact
 
