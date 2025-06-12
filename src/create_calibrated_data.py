@@ -21,7 +21,7 @@ def get_xy_soccer(player_num, sport, gps_type='ELITE'):
 
 
 def create_data(sport, color):
-    print(' ')
+    print('---------------------------------------------------------')
     print(f'Creating XY data: {sport} - {color}')
     df = pd.DataFrame()
     for player in tools.get_team_list(sport,color): 
@@ -31,7 +31,7 @@ def create_data(sport, color):
         df = pd.concat([df, df_trial], axis=1)
         # df[f'{player}_x'] = x
         # df[f'{player}_y'] = y
-    folder = f'./data/{sport}/' 
+    folder = f'../data/{sport}/' 
     print(f'File saved in : {folder}')
     os.makedirs(folder,exist_ok=True)
     df.to_csv(f'{folder}/{color}_xy.csv',index=False)
@@ -39,6 +39,8 @@ def create_data(sport, color):
 
 
 if __name__ == '__main__':
+    print(' ')
+    print('Creating XY data for all sports and teams...')
     create_data('soccer', 'blue')
     create_data('soccer', 'orange')
     create_data('basketball', 'blue')

@@ -111,7 +111,7 @@ def create_area_video(df_b, df_o, sport, variable, save=True):
     writer = FFMpegWriter(fps=30)
 
     if save == True:
-        folder_dir = f'results/{variable}/{sport}/'
+        folder_dir = f'../results/{variable}/{sport}/'
         print(f'    Saving video: {folder_dir}{sport}.mp4')
         os.makedirs(folder_dir, exist_ok=True)
         anim.save(f'{folder_dir}{sport}.mp4', writer=writer)
@@ -127,7 +127,7 @@ def calculate_area(sport, variable='area', save=True):
 
     anim = create_area_video(df_b, df_o, sport, 'area', save=True)
     if save == True:
-        folder_dir = f'results/{variable}/{sport}/'
+        folder_dir = f'../results/{variable}/{sport}/'
         print(f'    Saving data: {folder_dir}{sport}_blue.csv')
         df_b.to_csv(f'{folder_dir}{sport}_blue.csv',index=False)
         print(f'    Saving data: {folder_dir}{sport}_orange.csv')

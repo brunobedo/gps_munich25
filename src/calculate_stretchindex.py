@@ -124,7 +124,7 @@ def create_strechindex_video(df_b, df_o, sport, save=True):
     writer = FFMpegWriter(fps=30)
 
     if save:
-        folder_dir = f'results/strechindex/{sport}/'
+        folder_dir = f'../results/strechindex/{sport}/'
         os.makedirs(folder_dir, exist_ok=True)
         print(f'        Saving video: {folder_dir}{sport}.mp4')
         anim.save(f'{folder_dir}{sport}.mp4', writer=writer)
