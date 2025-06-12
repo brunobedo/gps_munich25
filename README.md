@@ -30,11 +30,6 @@ Install requirements:
 ```bash
 pip install -r requirements.txt
 ```
-
----
-
-Perfeito, Bruno. Aqui está a versão **resumida** e organizada da seção `🗂 Repository Structure`, com os arquivos de resultados agrupados por tipo de métrica e por modalidade, **sem listar individualmente cada CSV e MP4**:
-
 ---
 ## 🗂 Repository Folder/Files
 
@@ -52,7 +47,7 @@ gps\_munich25/
 │   ├── calib\_ref.png
 │   └── GPS\_Testing\_Protocol\_08\_05\_25.xlsx
 │
-├── rawdata/                       # Raw Kinexon GPS data from testing sessions
+├── rawdata/                       # Raw Kinexon GPS data from previous sessions
 │   ├── Kinexon GPS ELITE/
 │   └── Kinexon GPS PRO/
 │
@@ -65,8 +60,6 @@ gps\_munich25/
 │       ├── basketball/
 │       ├── soccer/
 │       └── volleyball/
-│
-├── src/                           # Scripts and notebooks for analysis
 │
 ├── requirements.txt               # Python dependencies
 └── README.md                      # This file
