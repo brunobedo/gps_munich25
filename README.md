@@ -1,6 +1,3 @@
-Here is a complete `README.md` file in Markdown format for your repository [`gps_munich25`](https://github.com/brunobedo/gps_munich25), based on the information provided:
-
-````markdown
 # GPS_Munich25
 
 Collaborative initiative for sports performance analysis using positional tracking data (GNSS, LPS, and Computer Vision) across Brazilian and German institutions. This project promotes scientific exchange, joint workshops, and the development of open tools and resources for applied research in team sports.
@@ -128,8 +125,3 @@ This project is supported by the **Bavarian Academic Center for Latin America (B
 * **Prof. Dr. Paulo Roberto Pereira Santiago** – [paulosantiago@usp.br](mailto:paulosantiago@usp.br)
 * **Prof. Dr. Bruno L. S. Bedo** – [bruno.bedo@usp.br](mailto:bruno.bedo@usp.br)
 * **Prof. Dr. Tiago G. Russomanno** – [tiago.russomanno@tum.de](mailto:tiago.russomanno@tum.de)
-
-```
-
-Se quiser que eu insira isso diretamente em um arquivo `README.md` ou deseje ajustes (como tradução, adição de badges, DOI, ou instruções para notebooks), é só avisar.
-```
