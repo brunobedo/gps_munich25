@@ -52,8 +52,9 @@ gps_munich25/
 │       ├── soccer/
 │       └── volleyball/
 │
-├── src/                # Python source code for computation and analysis
-└── README.md           # This file
+├── src/                 # Python source code for computation and analysis
+├── requirements.txt     # Python dependencies
+└── README.md            # This file
 ```
 
 ---
