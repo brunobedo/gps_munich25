@@ -19,12 +19,6 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Or with Conda:
-
-```bash
-conda env create -f environment.yml
-```
-
 Explore the folders:
 
 * `/data` – Processed positional data for each sport
