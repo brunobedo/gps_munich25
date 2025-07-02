@@ -263,7 +263,7 @@ def draw_soccer_field(tam=[30, 20]):
 
 
 
-def draw_basketball_court(ax=None, linecolor='white', lw=1.5, courtcolor='#CC5500', remove_axis=False, court_width= 15.05, court_length=28.4):
+def draw_basketball_court(ax=None, linecolor='black', lw=1.5, courtcolor='#CC5500', remove_axis=False, court_width= 15.05, court_length=28.4):
     if ax is None:
         fig, ax = plt.subplots(figsize=(10, 5))
 
@@ -335,7 +335,7 @@ def draw_basketball_court(ax=None, linecolor='white', lw=1.5, courtcolor='#CC550
 
 
 
-def draw_beach_volleyball_court(ax=None, linecolor='white', lw=2, courtcolor='#D2B48C', remove_axis=False, court_length = 16, court_width = 8):
+def draw_beach_volleyball_court(ax=None, linecolor='black', lw=2, courtcolor='#D2B48C', remove_axis=False, court_length = 16, court_width = 8):
     if ax is None:
         fig, ax = plt.subplots(figsize=(10, 5))
 
