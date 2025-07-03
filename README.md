@@ -62,10 +62,6 @@ Open an issue in this repository or reach out to the project team—collaboratio
 
 ---
 
-Let me know if you want to adjust the descriptions or add further detail!
-
----
-
 ## 🚀 Getting Started
 
 Clone the repository:
