@@ -4,6 +4,66 @@
 
 This repository documents the collaborative efforts between the University of São Paulo (USP) and the Technical University of Munich (TUM) to develop and apply positional data analysis tools in team sports. The project promotes academic exchange, international workshops, and the development of open metrics and visualizations for performance analysis.
 
+Certainly! Here’s how you can incorporate a “Hands-on Activity” section into your README, describing the five Google Colab notebooks, each with its direct link, short description, and a suggested flow for learners.
+
+---
+
+## 📝 Hands-on Activity: Positional Data Analysis in Team Sports
+
+This repository provides a practical, step-by-step hands-on activity structured into five Colab notebooks. Each notebook targets a fundamental concept in positional tracking and team sports performance analysis. You can follow the sequence to build your understanding and skills in raw data processing, field calibration, and advanced spatial metrics.
+
+**To participate, simply click each notebook link below and open in Google Colab.**
+
+### 1. RAW GPS DATA CALIBRATION
+
+[Open in Colab ▶️](https://colab.research.google.com/drive/1PXGyxd4NxlknCyrhddsM4g4GLnFoLO0K)
+*Learn how to calibrate raw GPS data, align positional data with field dimensions, and correct for device drift/errors. This is a crucial first step to ensure reliable downstream analyses.*
+
+---
+
+### 2. Field Length & Width Estimation
+
+[Open in Colab ▶️](https://colab.research.google.com/drive/1xiwUmwGlIxtj-iuj256HKKaTpyen7Bj9)
+*Use calibrated data to estimate and validate field boundaries (length and width). These metrics are essential for spatial normalization and cross-session comparability.*
+
+---
+
+### 3. Effective Area
+
+[Open in Colab ▶️](https://colab.research.google.com/drive/1v4jZPCroOsnmoVwBYBvh-SUOxumho4CG?usp=drive_link)
+*Calculate the “effective area” occupied by a team during play using convex hull and other spatial metrics, quantifying team compactness or dispersion over time.*
+
+---
+
+### 4. Stretch Index
+
+[Open in Colab ▶️](https://colab.research.google.com/drive/1xJPT6Q3YhVcobR034ltkItviQuea8oHw?usp=drive_link)
+*Analyze the mean distance of each player to their team’s centroid (“stretch index”) as an indicator of tactical organization and team structure.*
+
+---
+
+### 5. Team Spread
+
+[Open in Colab ▶️](https://colab.research.google.com/drive/1o8TMHEmSmq4SzHJSIcfefAJuN_GtgmX6?usp=drive_link)
+*Compute the “team spread” by assessing pairwise distances between all team members, gaining insight into space occupation, stretching, and contraction patterns.*
+
+---
+
+**Recommended Workflow:**
+
+* Start with Notebook 1 to calibrate and clean your positional data.
+* Proceed through Notebooks 2–5 in order, as each metric builds on the previous steps.
+* You are encouraged to experiment, visualize results, and adapt code to your own datasets.
+
+---
+
+**Have questions or want to share your results?**
+Open an issue in this repository or reach out to the project team—collaboration and learning are at the heart of this initiative!
+
+---
+
+Let me know if you want to adjust the descriptions or add further detail!
+
 ---
 
 ## 🚀 Getting Started
