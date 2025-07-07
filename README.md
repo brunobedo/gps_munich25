@@ -1,4 +1,4 @@
-# GPS_Munich25
+# gps_baylat25
 
 **Data Science and Sports Performance: A Bavarian–Latin American Initiative for Integrating GNSS, LPS, and Computer Vision Tracking in Team Sports Analysis**
 
@@ -66,7 +66,7 @@ Open an issue in this repository or reach out to the project team—collaboratio
 
 Clone the repository:
 ```bash
-git clone https://github.com/brunobedo/gps_munich25.git
+git clone https://github.com/brunobedo/gps_baylat25
 ````
 
 Install dependencies:
